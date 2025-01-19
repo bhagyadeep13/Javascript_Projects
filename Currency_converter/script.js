@@ -48,6 +48,11 @@ function updateFlag(element)
     img.src=newsrc
 }
 
+btn.addEventListener("mouseleave",function()
+{
+    btn.style.opacity = "1"
+})
+
 btn.addEventListener("click",async function(element)
 {
     btn.style.opacity ="0.5"
@@ -68,9 +73,9 @@ btn.addEventListener("click",async function(element)
     let rate = data[fromCurrCode][toCurrCode];
     console.log(fromCurrCode,rate)
     let totalval = rate*amtval;
-    let newMsg = `${amtval} ${fromCurrCode.toUpperCase()} -- ${totalval} ${toCurrCode.toUpperCase()}`
+    let newMsg = `<b>${amtval} ${fromCurrCode.toUpperCase()} -- ${totalval} ${toCurrCode.toUpperCase()}</b>`
 
-    msg.innerText = newMsg  // change the new text
+    msg.innerHTML = newMsg  // change the new text
 })
 
 
